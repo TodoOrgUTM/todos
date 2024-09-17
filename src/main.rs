@@ -17,7 +17,7 @@ use tower_cookies::{Cookie, CookieManagerLayer};
 #[tokio::main]
 async fn main() {
     let db_url = std::env::var("DATABASE_URL")
-        .unwrap_or_else(|_| "postgres://postgres:1597@localhost:3000/postgres".to_string());
+        .unwrap_or_else(|_| "postgres://postgres:1111@localhost:5432/postgres".to_string());
     let pool = PgPool::connect(&db_url).await.unwrap();
     let tera = Tera::new("templates/*.html").unwrap();
 
